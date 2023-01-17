@@ -15,6 +15,7 @@ const TypeText = ({ content }) => {
                 setIndex(index + 1);
             }
         }
+        console.log(imageMarkdownRegex, content, imageMarkdownRegex.test(content));
         if (imageMarkdownRegex.test(content)) {
             setDisplayContent(content);
         }
