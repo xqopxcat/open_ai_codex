@@ -43,4 +43,20 @@ app.post('/', async (req, res) => {
     } 
 });
 
+app.post('/image', async (req, res) => {
+    try {
+        const { prompt, size } = req.body;
+        const response = await openai.createImage({
+            prompt,
+            n: 1,
+            size
+        });
+        res.status(200).send({
+            bot: response.data.data[0].url
+        })
+    } catch (error) {
+        res.status(500).send({ error });
+    }
+})
+
 app.listen(8080, () => console.log('Server is running on port http://localhost:8080'));
