@@ -2,10 +2,11 @@ import React, { memo } from 'react';
 import { TypeLoader, TypeText } from './';
 import { BiBot, BiUser } from 'react-icons/bi';
 
-const ChatStripe = ({ id, value, isAi }) => {
+const ChatStripe = ({ id, value, isAi, isImage }) => {
     const renderType = () => {
         if (isAi) {
-            return value === '' ? <TypeLoader /> : <TypeText content={ value } />;
+            if (value === '') return <TypeLoader />;
+            return isImage ? <img src={ value } className="p-3 bg-gray-600 rounded-xl" alt="image" /> : <TypeText content={ value } />;
         }
         return value;
     }

@@ -3,6 +3,7 @@ import ChatStripe from './ChatStripe';
 import ChatContainer from './ChatContainer';
 import TypeLoader from './TypeLoader';
 import TypeText from './TypeText';
+import Tabs from './Tabs';
 
 export {
     ChatArea,
@@ -10,4 +11,5 @@ export {
     ChatContainer,
     TypeLoader,
     TypeText,
+    Tabs
 };

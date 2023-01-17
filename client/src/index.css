@@ -5,3 +5,22 @@ body {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tab-item {
+    @apply flex 
+    justify-center 
+    items-center 
+    p-4
+    pb-2
+    mx-1
+    border-b-2 
+    border-transparent 
+    rounded-t-lg 
+    hover:border-gray-300 
+    hover:text-gray-300
+    cursor-pointer
+}
+
+.tab-item.active {
+    @apply text-blue-500 border-blue-500
+}

@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown'
+import { imageMarkdownRegex } from '../helpers/utils';
+
+
 
 const TypeText = ({ content }) => {
     const [displayContent, setDisplayContent] = useState('');
@@ -11,12 +15,19 @@ const TypeText = ({ content }) => {
                 setIndex(index + 1);
             }
         }
-        setTimeout(updateWord, 20);
+        if (imageMarkdownRegex.test(content)) {
+            setDisplayContent(content);
+        }
+        else {
+            setTimeout(updateWord, 20);
+        }
     }, [index]);
         
     return (
         <div className="flex flex-1 text-[#dcdcdc] text-[14px] max-w-full overflow-x-scroll">
-            { displayContent }
+            { imageMarkdownRegex.test(content) ? (
+                <ReactMarkdown>{ displayContent }</ReactMarkdown>
+            ) : displayContent }
         </div>
     )
 };

@@ -3,7 +3,7 @@ import { AiOutlineSend } from 'react-icons/ai';
 import { generateUniqueId } from "../helpers/utils";
 
 
-const ChatArea = ({ onSubmit }) => {
+const ChatArea = ({ onSubmit, placeholder }) => {
     const [chatTerm, setChatTerm] = useState('')
     
     const handleSubmit = (e) => {
@@ -32,7 +32,7 @@ const ChatArea = ({ onSubmit }) => {
                     rows={ 1 }
                     cols={ 1 }
                     id="send-field"
-                    placeholder="Ask Codex..."
+                    placeholder={ placeholder }
                     value={ chatTerm }
                     onKeyUp={ handleKeyUp }
                     onChange={(e) => setChatTerm(e.target.value)}

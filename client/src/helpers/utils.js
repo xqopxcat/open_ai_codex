@@ -6,6 +6,9 @@ const generateUniqueId = () => {
     return `id-${timestamp}-${hexadecimalString}`;
 }
 
+const imageMarkdownRegex = /(\!)(\[.*\])(\((http)(?:s)?(\:\/\/).*\))/g;
+
 export {
-    generateUniqueId
+    generateUniqueId,
+    imageMarkdownRegex
 };

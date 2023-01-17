@@ -22,11 +22,21 @@ export const openAiCoreApi = createApi({
                 }
             }
         }),
+        generateAiImage: builder.mutation({
+            query: (body) => {
+                return {
+                    url: 'image',
+                    method: 'POST',
+                    body
+                }
+            }
+        })
     }),
 });
 
 export const {
     useGetTestQuery,
-    usePostAiCoreMutation
+    usePostAiCoreMutation,
+    useGenerateAiImageMutation
 } = openAiCoreApi;
 
